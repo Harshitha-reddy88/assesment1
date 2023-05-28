@@ -1,0 +1,79 @@
+<html>
+   <head>
+       <title>form page</title>
+       <style>
+          .name{
+             margin-bottom:20px;
+             padding:5px 30px 5px 5px;
+          }
+          .username{
+             margin-bottom:20px;
+             padding:5px 30px 5px 5px;
+          }
+          .email{
+             margin-bottom:20px;
+             padding:5px 30px 5px 5px;
+          }
+          .number{
+             margin-bottom:20px;
+             padding:5px 30px 5px 5px;
+          }
+         .data
+         {
+            margin-top:30px;
+         }
+         .main
+         {
+            margin-left:800px;
+         }
+         .btn
+         {
+            margin-left:50px;
+         }
+       </style>
+   </head>
+   <body>
+    <div class="main">
+      <div>
+         <input class="name" type="text" placeholder="Name">
+      </div>
+      
+      <div>
+         <input class="username" type="text" placeholder="User Name">
+      </div>
+      <div>
+         <input class="email" type="text" placeholder="Email">
+      </div>
+      <div>
+         <input class="number" type="number" placeholder="number">
+      </div>
+      <div>
+         <button class="btn">SUBMIT</button>
+      </div>
+      <div class="data"></div>
+    </div>
+   </body>
+   <script>
+       let datadiv=document.querySelector(".data");
+       let button=document.querySelector(".btn");
+       let maindata=document.querySelector("main");
+       button.onclick=function(){
+           let name=document.querySelector(".name").value;
+           let username=document.querySelector(".username").value;
+           let email=document.querySelector(".email").value;
+           let number=document.querySelector(".number").value;
+           let divtag=document.createElement("div");
+           let divtag1=document.createElement("div");
+           let divtag2=document.createElement("div");
+           let divtag3=document.createElement("div");
+           let edit=document.createElement("button");
+           edit.innerText="edit";
+           divtag.append(name);
+           divtag1.append(username);
+           divtag2.append(email);
+           divtag3.append(number);
+           datadiv.append(divtag,divtag1,divtag2,divtag3,edit);
+           let storage=JSON.parse(localStorage.setItem("datadiv"));
+       }
+   </script>
+</html>
